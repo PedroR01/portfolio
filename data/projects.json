@@ -1,0 +1,102 @@
+{
+  "projects": [
+    {
+      "id": 0,
+      "title": "Artimañas",
+      "category": "software",
+      "description": ""
+    },
+    {
+      "id": 1,
+      "title": "M1-CH1",
+      "category": "software",
+      "description": ""
+    },
+    {
+      "id": 2,
+      "title": "Aligo Distribuidora",
+      "category": "software",
+      "description": ""
+    },
+    {
+      "id": 3,
+      "title": "El club del Filete",
+      "category": "software",
+      "description": ""
+    },
+    {
+      "id": 4,
+      "title": "Lunthiel, a bounty tale",
+      "category": "game",
+      "description": ""
+    },
+    {
+      "id": 5,
+      "title": "TOC",
+      "category": "game",
+      "description": ""
+    },
+    {
+      "id": 6,
+      "title": "Bikerz",
+      "category": "software",
+      "description": ""
+    },
+    {
+      "id": 7,
+      "title": "Rhythmfy",
+      "category": "software",
+      "description": ""
+    }
+  ],
+  "projectsNodes": [
+    {
+      "id": 0,
+      "size": "large",
+      "posX": 35,
+      "posY": 40
+    },
+    {
+      "id": 1,
+      "size": "medium",
+      "posX": 70,
+      "posY": 55
+    },
+    {
+      "id": 2,
+      "size": "small",
+      "posX": 60,
+      "posY": 25
+    },
+    {
+      "id": 3,
+      "size": "medium",
+      "posX": 25,
+      "posY": 70
+    },
+    {
+      "id": 4,
+      "size": "large",
+      "posX": 80,
+      "posY": 20
+    },
+    {
+      "id": 5,
+      "size": "small",
+      "posX": 40,
+      "posY": 80
+    },
+    {
+      "id": 6,
+      "size": "medium",
+      "posX": 20,
+      "posY": 30
+    },
+    {
+      "id": 7,
+      "size": "small",
+      "posX": 50,
+      "posY": 60
+    }
+  ]
+}

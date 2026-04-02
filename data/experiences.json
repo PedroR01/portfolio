@@ -1,0 +1,34 @@
+{
+  "experiences": [
+    {
+      "position": "Ingeniero en Software Full Stack y Diseñador UX/UI",
+      "company": "Ohmia",
+      "duration": "2024 - Actualidad",
+      "location": "Buenos Aires",
+      "description": "Integrante y Co-creador de Ohmia, un estudio de desarrollo de software y aplicaciones web a medida. Encargado del estudio de requerimientos, diseño del sistema y arquitectura y programación del software.",
+      "links": [{ "web": "https://ohmia.com/" }],
+      "stack": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Node.js",
+        "PosgreSQL",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Git"
+      ]
+    },
+    {
+      "position": "Programador Frontend",
+      "company": "Taller de Producción Final - Cátedra Prof. Joselevich, Facultad de Artes (UNLP)",
+      "duration": "sept 2024 - Dic 2024",
+      "location": "Buenos Aires",
+      "description": "Integrante del equipo Front-end de la aplicación web de exposición de Tesinas de grado en el festival “Artimañas 2024” de la Universidad Nacional de La Plata. Equipo interdisciplinario compuesto de diseño web, UX/UX y Arte y curaduría, siguiendo una metodología SCRUM para el desarrollo constante en tiempo y forma. Despliegue realizado en el dominio por medio del protocolo FTP, utilizando WinSCP.",
+      "links": {
+        "web": "https://taller5.ludic.cc/artimanias/2024/",
+        "repositorio": "https://github.com/PedroR01/Artimanias2024"
+      },
+      "stack": ["React", "Javascript", "Node.js", "Tailwind CSS", "Git"]
+    }
+  ]
+}
