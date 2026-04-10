@@ -1,0 +1,36 @@
+---
+description: Gestión eficiente de tokens y recursos de IA
+alwaysApply: true
+---
+
+# Eficiencia de tokens
+
+## Principio rector
+
+Maximizar el valor por token: cada token gastado debe aportar información útil, código funcional, o aprendizaje concreto. Eliminar redundancia sin sacrificar claridad.
+
+## Código
+
+- No repetir código que no cambió; mostrar solo las secciones modificadas con contexto mínimo suficiente para ubicarlas
+- No agregar comentarios que narren lo obvio (// importar X, // retornar resultado)
+- Usar code references (startLine:endLine:filepath) para citar código existente en vez de copiarlo completo
+- En Agent mode: preferir ediciones quirúrgicas sobre reescrituras completas de archivo
+
+## Explicaciones
+
+- No re-explicar conceptos ya cubiertos en la conversación actual
+- Explicar denso: alto contenido por párrafo, sin frases de relleno ni preámbulos innecesarios
+- Nombrar el patrón/concepto una vez con definición breve, no dar una clase completa
+- Cuando un concepto tiene buena documentación externa, mencionarlo por nombre para que yo lo estudie en vez de reproducir la documentación
+
+## Exploración del codebase
+
+- Si el usuario referencia archivos con @, usar ese contexto directamente sin re-leerlos
+- No explorar carpetas enteras cuando el problema está en un archivo específico
+- Antes de buscar, revisar si la información ya está disponible en el contexto o en las rules del proyecto
+
+## Conversación
+
+- Si la petición es ambigua, preguntar antes de explorar exhaustivamente
+- Sugerir iniciar un chat nuevo cuando el tema cambió y el historial acumulado ya no es relevante
+- En respuestas largas, estructurar con headers para que pueda saltar a lo que necesito

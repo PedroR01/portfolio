@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Toaster } from "sonner";
 
 const clashDisplay = localFont({
   src: "../public/fonts/clash-display/ClashDisplay-Semibold.woff2",
@@ -42,6 +43,7 @@ export default function RootLayout({
         className={`${clashDisplay.variable} ${archivo.variable} antialiased`}
       >
         {children}
+        <Toaster position="bottom-right" richColors theme="dark" />
       </body>
     </html>
   );

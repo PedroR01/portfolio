@@ -1,0 +1,23 @@
+---
+description: Patrones de React + GSAP + Tailwind del proyecto
+globs: "**/*.tsx"
+alwaysApply: false
+---
+
+# Patrones técnicos
+
+## GSAP en componentes
+
+- Usar useGSAP de @gsap/react (no useEffect directo)
+- Registrar plugins en lib/gsap.ts, importar desde ahí
+- Limpiar ScrollTriggers en el return del useGSAP
+
+## Componentes React
+
+- Componentes funcionales con arrow functions
+- Props tipadas con interfaces de interfaces/
+- Tailwind para estilos, no CSS modules
+
+## Datos
+
+- Datos estáticos en data/\*.json, tipados con interfaces/

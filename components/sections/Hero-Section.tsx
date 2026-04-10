@@ -4,9 +4,11 @@ import Image from "next/image";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ArrowUpRightIcon } from "lucide-react";
+import Waves from "@/components/effects/Waves";
 
 export default function HeroSection() {
   const heroRef = useRef<HTMLDivElement>(null);
+  const ctaRef = useRef<HTMLAnchorElement>(null);
 
   // Scroll parallax efect
   useGSAP(() => {
@@ -23,11 +25,7 @@ export default function HeroSection() {
       })
 
       // Depth Fade sutil (sin blur) --> Este primero hace que parezca que se le hace zoom-out al contenedor.
-      .to(
-        ".hero-section",
-        { scale: 0.96, y: -60, opacity: 0.85, ease: "none" },
-        0,
-      )
+      .to(".hero-section", { y: -60, opacity: 0.85, ease: "none" }, 0)
       .to(".hero-text-layer", { y: -40 }, 0)
       .to(".hero-image-layer", { y: -120, scale: 0.95 }, 0)
       .to(".hero-wrapper", { opacity: 0.6 }, 0);
@@ -73,6 +71,9 @@ export default function HeroSection() {
   // Animaciones titulo de entrada
   useGSAP(
     () => {
+      const ctaElement = ctaRef.current;
+      if (!ctaElement) return;
+
       gsap
         .timeline()
         .from(".hero-greeting", {
@@ -93,9 +94,20 @@ export default function HeroSection() {
           "<=0.4",
         )
         .from(".hero-text", { y: 40, opacity: 0, duration: 0.8 }, "-=0.6")
-        .from(
-          ".hero-cta",
-          { scale: 0.8, opacity: 0, duration: 0.6, ease: "back.out(1.7)" },
+        .fromTo(
+          ctaElement,
+          { opacity: 0, scale: 0.8, immediateRender: false },
+          {
+            opacity: 1,
+            scale: 1,
+            duration: 0.6,
+            ease: "back.out(1.7)",
+            onComplete: () => {
+              if (ctaRef.current) {
+                gsap.set(ctaRef.current, { clearProps: "opacity,transform" });
+              }
+            },
+          },
           "-=0.5",
         )
         .from(
@@ -113,7 +125,21 @@ export default function HeroSection() {
       className="relative min-h-screen flex items-center overflow-hidden z-20 hero-section"
       id="hero"
     >
-      <div className="absolute inset-0 bg-linear-to-br from-black via-zinc-900 to-black " />
+      <Waves
+        lineColor="#0f2f0e"
+        backgroundColor="transparent"
+        waveSpeedX={0.02}
+        waveSpeedY={0.04}
+        waveAmpX={30}
+        waveAmpY={40}
+        friction={0.62}
+        tension={0.025}
+        maxCursorMove={100}
+        xGap={10}
+        yGap={30}
+      />
+
+      <div className="absolute inset-0 bg-transparent" />
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center z-10 hero-wrapper hero-content">
         <div className="space-y-6 hero-text-layer">
           <p className="hero-greeting text-zinc-400 text-lg max-w-xl font-archivo font-light">
@@ -134,8 +160,9 @@ export default function HeroSection() {
           </p>
 
           <a
+            ref={ctaRef}
             href="#contact"
-            className="hero-cta inline-block px-6 py-3 transition-colors duration-200 rounded-lg hover:bg-accent-hover active:bg-accent-hover relative overflow-hidden font-archivo font-normal border-accent-foreground border-2 shadow-[0_5px_50px_-2px_rgba(11,210,150,0.2)]"
+            className="hero-cta inline-block px-6 py-3 transition-all duration-200 transform active:scale-75 rounded-lg bg-accent-btn hover:bg-accent-btn-hover active:bg-accent-btn-active relative overflow-hidden font-archivo font-normal border-accent-foreground border-2 shadow-[0_5px_50px_-2px_rgba(11,210,150,0.2)]"
           >
             Conversemos
           </a>
@@ -144,7 +171,7 @@ export default function HeroSection() {
         <div className="flex flex-col items-center justify-center md:justify-end">
           <div className="hero-image-layer relative w-64 h-64 rounded-xl overflow-hidden border border-zinc-800 shadow-2xl">
             <Image
-              src="/img/hero-img.webp"
+              src="/img/hero-portrait.jpg"
               alt="Foto de Pedro"
               fill
               className="object-cover hero-tilt"
@@ -154,7 +181,8 @@ export default function HeroSection() {
           <ul className="hero-socials-layer mt-4 md:mt-8 font-archivo flex gap-4">
             <li>
               <a
-                href=""
+                href="https://github.com/PedroR01"
+                rel="noopener noreferrer"
                 target="_blank"
                 className="text-paragraph hover:underline hover:text-accent-foreground active:text-accent-foreground transition-colors duration-200"
               >
@@ -167,7 +195,8 @@ export default function HeroSection() {
             </li>
             <li>
               <a
-                href=""
+                href="https://www.linkedin.com/in/robinetpedro/"
+                rel="noopener noreferrer"
                 target="_blank"
                 className="text-paragraph hover:underline hover:text-accent-foreground active:text-accent-foreground transition-colors duration-200"
               >

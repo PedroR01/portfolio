@@ -4,99 +4,81 @@
       "id": 0,
       "title": "Artimañas",
       "category": "software",
-      "description": ""
+      "description": "Plataforma web orientada a la gestión y presentación de contenido con foco en rendimiento y una experiencia de usuario clara para visitantes y administradores.",
+      "image": "/img/software-window.svg",
+      "stack": ["Next.js", "TypeScript", "Tailwind CSS"],
+      "link": "https://example.com",
+      "repo": "https://github.com"
     },
     {
       "id": 1,
       "title": "M1-CH1",
       "category": "software",
-      "description": ""
+      "description": "Aplicación web con interfaz responsive y flujos definidos para operaciones recurrentes, priorizando mantenibilidad y tiempos de carga.",
+      "image": "/img/software-window.svg",
+      "stack": ["React", "Node.js", "PostgreSQL"],
+      "link": "https://example.com",
+      "repo": "https://github.com"
     },
     {
       "id": 2,
       "title": "Aligo Distribuidora",
       "category": "software",
-      "description": ""
+      "description": "Sitio corporativo y herramientas internas para comunicar catálogo y canales de contacto, con estructura escalable para nuevas secciones.",
+      "image": "/img/software-window.svg",
+      "stack": ["Next.js", "CMS", "Vercel"],
+      "link": "https://example.com",
+      "repo": "https://github.com"
     },
     {
       "id": 3,
       "title": "El club del Filete",
       "category": "software",
-      "description": ""
+      "description": "Experiencia digital para marca gastronómica: reservas, storytelling visual y optimización para dispositivos móviles.",
+      "image": "/img/software-window.svg",
+      "stack": ["Next.js", "GSAP", "Tailwind CSS"],
+      "link": "https://example.com",
+      "repo": "https://github.com"
     },
     {
       "id": 4,
       "title": "Lunthiel, a bounty tale",
       "category": "game",
-      "description": ""
+      "description": "Videojuego con narrativa, combate y progresión; desarrollo con énfasis en sensación de juego, feedback al jugador y rendimiento estable.",
+      "image": "/img/game-card.svg",
+      "stack": ["Unity", "C#", "FMOD"],
+      "link": "https://example.com",
+      "repo": "https://github.com"
     },
     {
       "id": 5,
       "title": "TOC",
       "category": "game",
-      "description": ""
+      "description": "Proyecto interactivo experimental: mecánicas iteradas con playtesting y pulido de game feel.",
+      "image": "/img/game-card.svg",
+      "stack": ["Godot", "GDScript"],
+      "link": "https://example.com",
+      "repo": "https://github.com"
     },
     {
       "id": 6,
       "title": "Bikerz",
       "category": "software",
-      "description": ""
+      "description": "Producto digital con mapas, perfiles y comunidad; arquitectura preparada para crecer en features sin sacrificar claridad.",
+      "image": "/img/software-window.svg",
+      "stack": ["React Native", "TypeScript", "Firebase"],
+      "link": "https://example.com",
+      "repo": "https://github.com"
     },
     {
       "id": 7,
       "title": "Rhythmfy",
       "category": "software",
-      "description": ""
-    }
-  ],
-  "projectsNodes": [
-    {
-      "id": 0,
-      "size": "large",
-      "posX": 35,
-      "posY": 40
-    },
-    {
-      "id": 1,
-      "size": "medium",
-      "posX": 70,
-      "posY": 55
-    },
-    {
-      "id": 2,
-      "size": "small",
-      "posX": 60,
-      "posY": 25
-    },
-    {
-      "id": 3,
-      "size": "medium",
-      "posX": 25,
-      "posY": 70
-    },
-    {
-      "id": 4,
-      "size": "large",
-      "posX": 80,
-      "posY": 20
-    },
-    {
-      "id": 5,
-      "size": "small",
-      "posX": 40,
-      "posY": 80
-    },
-    {
-      "id": 6,
-      "size": "medium",
-      "posX": 20,
-      "posY": 30
-    },
-    {
-      "id": 7,
-      "size": "small",
-      "posX": 50,
-      "posY": 60
+      "description": "App musical con sincronización, playlists y UI fluida; integración con APIs de audio y estados de carga optimizados.",
+      "image": "/img/software-window.svg",
+      "stack": ["Next.js", "Web Audio API", "Stripe"],
+      "link": "https://example.com",
+      "repo": "https://github.com"
     }
   ]
 }

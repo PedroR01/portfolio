@@ -1,0 +1,27 @@
+# Dependencias
+node_modules/
+
+# Build output
+.next/
+out/
+build/
+
+# Archivos de entorno
+.env*
+
+# Archivos generados
+*.tsbuildinfo
+next-env.d.ts
+
+# Logs
+*.log
+.cursor/debug-*.log
+
+# Assets binarios (la IA no puede leerlos)
+public/fonts/**/*.woff2
+public/fonts/**/*.woff
+public/fonts/**/*.ttf
+public/img/*.svg
+
+# Configuración que rara vez cambia
+.vercel/

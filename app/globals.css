@@ -9,6 +9,9 @@
   --color-accent-background: var(--accent-background);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent-hover: var(--accent-hover);
+  --color-accent-btn: var(--accent-btn);
+  --color-accent-btn-hover: var(--accent-btn-hover);
+  --color-accent-btn-active: var(--accent-btn-active);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-title: var(--title);
@@ -24,6 +27,9 @@
     --accent-background: oklch(50.8% 0.118 165.612);
     --accent-foreground: oklch(76.52% 0.16221 163.779);
     --accent-hover: oklch(59.6% 0.145 163.225);
+    --accent-btn: oklch(59.6% 0.145 163.225);
+    --accent-btn-hover: oklch(55.07% 0.12211 161.168);
+    --accent-btn-active: oklch(51.186% 0.11358 161.248);
     --paragraph: oklch(70.5% 0.015 286.067);
     --title: oklch(96.416% 0.00011 271.152);
   }
@@ -44,4 +50,14 @@ html {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
   scroll-behavior: smooth;
+}
+
+/* TODO: No estan funcionando las clases custom-btn y button-interaction-feedback. No se aplica el estilo*/
+
+.custom-btn {
+  @apply px-6 py-3 rounded-lg bg-accent-btn font-archivo font-normal border-accent-foreground border-2 shadow-[0_5px_50px_-2px_rgba(11,210,150,0.2)];
+}
+
+.button-interaction-feedback {
+  @apply transition-all duration-200 transform active:scale-75 hover:bg-accent-btn-hover active:bg-accent-btn-active cursor-pointer;
 }

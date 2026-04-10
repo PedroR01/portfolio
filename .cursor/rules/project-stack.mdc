@@ -1,0 +1,30 @@
+---
+description: Stack técnico y estructura del proyecto soy-pep
+alwaysApply: true
+---
+
+# Proyecto: soy-pep (Portfolio/CV Landing Page)
+
+## Stack
+
+- Next.js 16 (App Router) + React 19 + TypeScript 5
+- Tailwind CSS v4 (via @tailwindcss/postcss)
+- GSAP 3.14 + @gsap/react (ScrollTrigger, useGSAP)
+- lucide-react (iconos), Resend (email API)
+- Fuentes locales: Archivo, Clash Display
+
+## Estructura clave
+
+- `app/` — páginas y layouts (App Router)
+- `components/sections/` — secciones principales del landing
+- `components/effects/` — efectos visuales (cursor, waves, transiciones)
+- `components/ui/` — componentes reutilizables
+- `data/` — JSON con datos de proyectos y experiencias
+- `interfaces/` — tipos TypeScript
+- `lib/gsap.ts` — configuración centralizada de GSAP
+
+## Convenciones
+
+- Nombres de archivo: PascalCase con guiones (Hero-Section.tsx)
+- Todos los componentes animados son "use client" (interactividad con GSAP)
+- Animaciones vía GSAP ScrollTrigger y useGSAP hook

@@ -6,7 +6,6 @@
       "duration": "2024 - Actualidad",
       "location": "Buenos Aires",
       "description": "Integrante y Co-creador de Ohmia, un estudio de desarrollo de software y aplicaciones web a medida. Encargado del estudio de requerimientos, diseño del sistema y arquitectura y programación del software.",
-      "links": [{ "web": "https://ohmia.com/" }],
       "stack": [
         "React",
         "Next.js",

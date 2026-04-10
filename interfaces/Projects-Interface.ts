@@ -1,19 +1,26 @@
+import type { MouseEvent } from "react";
+
 export type Project = {
-    id: number;
-    title: string;
-    category: "game" | "software";
-    description?: string;
-    image?: string;
+  id: number;
+  title: string;
+  category: "game" | "software";
+  description: string;
+  image: string;
+  stack: string[];
+  link?: string;
+  repo?: string;
 };
 
-export type ProjectProps = {
-    project: Project;
-    activeId: number | null;
-    setActiveId: (id: number | null) => void;
+export type ProjectCardProps = {
+  project: Project;
+  isHovered: boolean;
+  isAnyHovered: boolean;
+  onHover: (id: number | null) => void;
+  onOpen: (e: MouseEvent, project: Project) => void;
 };
 
-export type ProjectNode = {
-    size: "large" | "medium" | "small";
-    posX: number;
-    posY: number;
+export type ProjectDetailProps = {
+  project: Project;
+  origin: { x: number; y: number };
+  onClose: () => void;
 };

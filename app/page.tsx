@@ -4,6 +4,7 @@ import TestimonialsSection from "@/components/sections/Testimonials-Section";
 import ScrollProgressBar from "@/components/effects/Scroll-Progress-Bar";
 import ExperienceProjectTransition from "@/components/effects/Experience-Project-Transition";
 import HeroSection from "@/components/sections/Hero-Section";
+import Footer from "@/components/ui/Footer";
 
 export default function Home() {
   return (
@@ -12,11 +13,9 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <ExperienceProjectTransition />
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
       <ContactSection />
-      <footer>
-        © 2026 Pe-Rob. Made in Argentina 🇦🇷 GitHub LinkedIn Twitter{" "}
-      </footer>
+      <Footer />
     </main>
   );
 }

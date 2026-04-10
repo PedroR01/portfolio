@@ -1,26 +1,52 @@
 "use client";
 
 import { useState } from "react";
+import { toast } from "sonner";
 
 export default function ContactSection() {
   const [loading, setLoading] = useState(false);
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.SubmitEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
 
     const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
 
-    await fetch("/api/contact", {
-      method: "POST",
-      body: JSON.stringify({
-        name: formData.get("name"),
-        email: formData.get("email"),
-        message: formData.get("message"),
-      }),
-    });
-
-    setLoading(false);
+    try {
+      const res = await fetch("/api/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.get("name"),
+          email: formData.get("email"),
+          message: formData.get("message"),
+        }),
+      });
+      if (res.ok) {
+        toast.success("Mensaje enviado", {
+          description: "Te responderé lo antes posible.",
+        });
+        form.reset();
+      } else {
+        const data = await res.json();
+        if (res.status === 429) {
+          toast.warning("Demasiados intentos", {
+            description: "Espera un momento antes de volver a intentarlo.",
+          });
+        } else {
+          toast.error("No se pudo enviar", {
+            description: data.error ?? "Inténtalo de nuevo más tarde.",
+          });
+        }
+      }
+    } catch {
+      toast.error("Error de red", {
+        description: "Revisa tu conexión e inténtalo de nuevo.",
+      });
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -53,7 +79,7 @@ export default function ContactSection() {
 
           <button
             type="submit"
-            className="w-full py-3 bg-emerald-500 hover:bg-emerald-400 rounded-lg"
+            className="w-full px-6 py-3 rounded-lg bg-accent-btn font-archivo font-normal border-accent-foreground border-2 shadow-[0_5px_50px_-2px_rgba(11,210,150,0.2)] transition-all duration-200 transform active:scale-75 hover:bg-accent-btn-hover active:bg-accent-btn-active cursor-pointer"
           >
             {loading ? "Enviando..." : "Enviar mensaje"}
           </button>
