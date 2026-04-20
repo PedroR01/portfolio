@@ -81,7 +81,7 @@ export default function ProjectCard({
       <div ref={floatRef} className="h-full">
         <div
           role="button"
-          className="group w-full text-left h-full flex flex-col bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl overflow-hidden shadow-none transition-shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-foreground/60"
+          className="group w-full text-left h-full flex flex-col bg-background/70 border border-white/10 backdrop-blur-md rounded-2xl overflow-hidden hover:cursor-pointer shadow-none transition-shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-foreground/60"
           onClick={(e) => onOpen(e, project)}
         >
           <ProjectPreview

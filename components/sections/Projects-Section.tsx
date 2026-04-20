@@ -65,45 +65,48 @@ export default function ProjectsSection() {
     { scope: sectionRef },
   );
 
-  const handleFilterChange = useCallback((newCat: Category) => {
-    if (newCat === category) return;
-    filterInteractionRef.current = true;
+  const handleFilterChange = useCallback(
+    (newCat: Category) => {
+      if (newCat === category) return;
+      filterInteractionRef.current = true;
 
-    const grid = gridRef.current;
-    const cards = grid?.querySelectorAll(".project-card");
-    if (!cards?.length) {
-      setCategory(newCat);
-      return;
-    }
-
-    gsap.to(cards, {
-      scale: 0.92,
-      opacity: 0,
-      duration: 0.3,
-      stagger: { each: 0.05 },
-      ease: "power2.in",
-      onComplete: () => {
+      const grid = gridRef.current;
+      const cards = grid?.querySelectorAll(".project-card");
+      if (!cards?.length) {
         setCategory(newCat);
-        requestAnimationFrame(() => {
-          const next = gridRef.current?.querySelectorAll(".project-card");
-          if (next?.length) {
-            gsap.fromTo(
-              next,
-              { y: 40, opacity: 0, scale: 0.98 },
-              {
-                y: 0,
-                opacity: 1,
-                scale: 1,
-                duration: 0.45,
-                stagger: 0.08,
-                ease: "power3.out",
-              },
-            );
-          }
-        });
-      },
-    });
-  }, [category]);
+        return;
+      }
+
+      gsap.to(cards, {
+        scale: 0.92,
+        opacity: 0,
+        duration: 0.3,
+        stagger: { each: 0.05 },
+        ease: "power2.in",
+        onComplete: () => {
+          setCategory(newCat);
+          requestAnimationFrame(() => {
+            const next = gridRef.current?.querySelectorAll(".project-card");
+            if (next?.length) {
+              gsap.fromTo(
+                next,
+                { y: 40, opacity: 0, scale: 0.98 },
+                {
+                  y: 0,
+                  opacity: 1,
+                  scale: 1,
+                  duration: 0.45,
+                  stagger: 0.08,
+                  ease: "power3.out",
+                },
+              );
+            }
+          });
+        },
+      });
+    },
+    [category],
+  );
 
   const handleOpen = useCallback((e: MouseEvent, project: Project) => {
     const x = (e.clientX / window.innerWidth) * 100;
@@ -126,7 +129,7 @@ export default function ProjectsSection() {
     >
       <div className="absolute inset-0 z-0 opacity-[0.35] pointer-events-none">
         <Waves
-          lineColor="#0f2f0e"
+          lineColor="#38a386"
           backgroundColor="transparent"
           waveSpeedX={0.01}
           waveSpeedY={0.025}

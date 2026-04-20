@@ -434,10 +434,15 @@ const Waves: React.FC<WavesProps> = ({
           if (isLast) ctx.moveTo(p2.x, p2.y); // The canvas moves the origin point to the next point.
         });
       });
-      ctx.strokeStyle = ctx.createLinearGradient(0, 0, 0, height);
-      ctx.strokeStyle.addColorStop(1, "#000000");
-      ctx.strokeStyle.addColorStop(0, configRef.current.lineColor);
+      const lineColor = configRef.current.lineColor;
+      const g = ctx.createLinearGradient(0, 0, 0, height);
+      g.addColorStop(0, lineColor);
+      g.addColorStop(1, "rgba(0, 0, 0, 0)");
+      ctx.strokeStyle = g;
+      ctx.lineWidth = 1.25;
+      ctx.globalAlpha = 0.58;
       ctx.stroke();
+      ctx.globalAlpha = 1;
     }
 
     /**

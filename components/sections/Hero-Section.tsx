@@ -5,6 +5,7 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ArrowUpRightIcon } from "lucide-react";
 import Waves from "@/components/effects/Waves";
+import CursorSpotlight from "../effects/Cursor-Spotlight";
 
 export default function HeroSection() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -121,7 +122,7 @@ export default function HeroSection() {
       id="hero"
     >
       <Waves
-        lineColor="#0f2f0e"
+        lineColor="#2b8a6e"
         backgroundColor="transparent"
         waveSpeedX={0.02}
         waveSpeedY={0.04}
@@ -134,7 +135,9 @@ export default function HeroSection() {
         yGap={30}
       />
 
-      <div className="absolute inset-0 bg-transparent" />
+      <CursorSpotlight containerRef={heroRef} />
+
+      <div className="pointer-events-none absolute inset-0 z-4 bg-transparent" />
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center z-10 hero-wrapper hero-content">
         <div className="space-y-6 hero-text-layer">
           <p className="hero-greeting text-zinc-400 text-lg max-w-xl font-archivo font-light">

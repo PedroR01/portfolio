@@ -32,6 +32,35 @@
     --accent-btn-active: oklch(51.186% 0.11358 161.248);
     --paragraph: oklch(70.5% 0.015 286.067);
     --title: oklch(96.416% 0.00011 271.152);
+
+    /* Capas de profundidad (z-index semántico) */
+    --z-bg: 0;
+    --z-waves: 1;
+    --z-spotlight: 2;
+    --z-decor: 3;
+    --z-content: 10;
+
+    /* Spotlight: “vidrio” muy leve sobre el fondo */
+    --spotlight-size: min(300px, 70vw);
+    --spotlight-inner: color-mix(
+      in oklch,
+      var(--accent-foreground) 18%,
+      transparent
+    );
+    --spotlight-mid: color-mix(
+      in oklch,
+      var(--accent-foreground) 8%,
+      transparent
+    );
+    --spotlight-outer: transparent;
+  }
+}
+
+/* No montar CursorSpotlight en dispositivos con preferencia */
+@media (prefers-reduced-motion: reduce) {
+  .cursor-spotlight-layer {
+    opacity: 0 !important;
+    filter: none !important;
   }
 }
 
