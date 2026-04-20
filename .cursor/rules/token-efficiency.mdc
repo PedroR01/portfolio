@@ -15,6 +15,7 @@ Maximizar el valor por token: cada token gastado debe aportar información útil
 - No agregar comentarios que narren lo obvio (// importar X, // retornar resultado)
 - Usar code references (startLine:endLine:filepath) para citar código existente en vez de copiarlo completo
 - En Agent mode: preferir ediciones quirúrgicas sobre reescrituras completas de archivo
+- No implementar funciones extra o adaptabilidad con teclado a excepción de que se especifiquen. Si se considera añadir un tipo de funcionalidad de este estilo, preguntar y aclarar por qué se sugiere esta posible implementación.
 
 ## Explicaciones
 

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Toaster } from "sonner";
@@ -27,9 +27,23 @@ const archivo = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio - Soy Pep",
+  title: "Pedro Dev",
   description:
-    "¡Bienvenido! Soy Pedro, mirá tranquilo/a mi portfolio y si te gusta algo de lo que ves, no dudes en contactarme.",
+    "¡Bienvenido! Soy Pedro, mirá tranquilo/a mi portfolio y si te gusta algo de lo que ves no dudes en contactarme.",
+  manifest: "/manifest.json",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-icon.png",
+  },
+  appleWebApp: {
+    title: "PeDev", // genera: <meta name="apple-mobile-web-app-title" content="PeDev" />
+    capable: true,
+    statusBarStyle: "default",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#007a55",
 };
 
 export default function RootLayout({

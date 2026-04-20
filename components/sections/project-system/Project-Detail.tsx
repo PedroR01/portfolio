@@ -2,10 +2,10 @@
 
 import { useCallback, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
-import Image from "next/image";
 import { gsap } from "gsap";
 import { X, ArrowUpRight } from "lucide-react";
 import type { ProjectDetailProps } from "@/interfaces/Projects-Interface";
+import ProjectPreview from "./Project-Preview";
 
 export default function ProjectDetail({
   project,
@@ -116,14 +116,14 @@ export default function ProjectDetail({
         className="h-full overflow-y-auto px-6 py-24 md:py-20 max-w-6xl mx-auto"
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-start">
-          <div className="relative aspect-video w-full rounded-2xl overflow-hidden border border-white/10 bg-zinc-900/50 shadow-2xl">
-            <Image
-              src={project.image}
-              alt={project.title}
-              fill
-              className="object-cover object-center"
+          <div className="relative w-full rounded-2xl overflow-hidden border border-white/10 bg-zinc-900/50 shadow-2xl">
+            <ProjectPreview
+              key={project.id}
+              project={project}
+              variant="detail"
               sizes="(max-width: 1024px) 100vw, 50vw"
               priority
+              className="rounded-2xl"
             />
           </div>
 

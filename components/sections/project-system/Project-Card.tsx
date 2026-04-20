@@ -1,10 +1,10 @@
 "use client";
 
 import { useRef } from "react";
-import Image from "next/image";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import type { ProjectCardProps } from "@/interfaces/Projects-Interface";
+import ProjectPreview from "./Project-Preview";
 
 export default function ProjectCard({
   project,
@@ -79,20 +79,16 @@ export default function ProjectCard({
       onMouseLeave={() => onHover(null)}
     >
       <div ref={floatRef} className="h-full">
-        <button
-          type="button"
+        <div
+          role="button"
           className="group w-full text-left h-full flex flex-col bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl overflow-hidden shadow-none transition-shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-foreground/60"
           onClick={(e) => onOpen(e, project)}
         >
-          <div className="relative aspect-video w-full overflow-hidden bg-zinc-900/50">
-            <Image
-              src={project.image}
-              alt={project.title}
-              fill
-              className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-          </div>
+          <ProjectPreview
+            project={project}
+            variant="card"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
           <div className="flex flex-col flex-1 p-5 md:p-6 gap-3">
             <h3 className="font-clash-display text-xl md:text-2xl text-title leading-tight">
               {project.title}
@@ -111,7 +107,7 @@ export default function ProjectCard({
               ))}
             </div>
           </div>
-        </button>
+        </div>
       </div>
     </div>
   );

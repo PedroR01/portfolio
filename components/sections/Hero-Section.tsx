@@ -109,11 +109,6 @@ export default function HeroSection() {
             },
           },
           "-=0.5",
-        )
-        .from(
-          ".hero-image",
-          { scale: 0.8, opacity: 0, duration: 1, ease: "power3.out" },
-          "-=1",
         );
     },
     { scope: heroRef },
@@ -173,6 +168,7 @@ export default function HeroSection() {
             <Image
               src="/img/hero-portrait.jpg"
               alt="Foto de Pedro"
+              sizes="(max-width: 768px) 100vw, 50vw"
               fill
               className="object-cover hero-tilt"
               priority

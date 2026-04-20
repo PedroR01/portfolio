@@ -2,83 +2,101 @@
   "projects": [
     {
       "id": 0,
-      "title": "Artimañas",
+      "title": "Simulador Semaforos Inteligentes IoT",
       "category": "software",
-      "description": "Plataforma web orientada a la gestión y presentación de contenido con foco en rendimiento y una experiencia de usuario clara para visitantes y administradores.",
-      "image": "/img/software-window.svg",
-      "stack": ["Next.js", "TypeScript", "Tailwind CSS"],
-      "link": "https://example.com",
-      "repo": "https://github.com"
+      "description": "Simulador de emplazamiento de semaforos inteligentes IoT en un entorno urbano dinámico y responsivo. Desarrollo como sustento práctico del paper 'Sistema de Semaforización Inteligente: Arquitectura Tecnológica para la Optimización del Tránsito Urbano'.",
+      "slug": "semaforos-iot",
+      "media": [{ "type": "video", "src": "semaforos01.mp4" }],
+      "stack": ["Unity 3D", "C#", "Blender", "HLSL Shaders", "ESP32"],
+      "link": "https://github.com/PedroR01/"
     },
     {
       "id": 1,
-      "title": "M1-CH1",
+      "title": "Aligo Distribuidora",
       "category": "software",
-      "description": "Aplicación web con interfaz responsive y flujos definidos para operaciones recurrentes, priorizando mantenibilidad y tiempos de carga.",
-      "image": "/img/software-window.svg",
-      "stack": ["React", "Node.js", "PostgreSQL"],
-      "link": "https://example.com",
-      "repo": "https://github.com"
+      "description": "Sistema web que centraliza la comunicación entre los empleados y la empresa, y el acceso a recursos internos como catálogos.",
+      "slug": "aligo-distribuidora",
+      "media": [
+        { "type": "image", "src": "aligo01.webp" },
+        { "type": "image", "src": "aligo02.webp" }
+      ],
+      "stack": [
+        "Next.js",
+        "Node.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "GSAP",
+        "Supabase",
+        "Cloudflare R2"
+      ]
     },
     {
       "id": 2,
-      "title": "Aligo Distribuidora",
+      "title": "El club del Filete",
       "category": "software",
-      "description": "Sitio corporativo y herramientas internas para comunicar catálogo y canales de contacto, con estructura escalable para nuevas secciones.",
-      "image": "/img/software-window.svg",
-      "stack": ["Next.js", "CMS", "Vercel"],
-      "link": "https://example.com",
-      "repo": "https://github.com"
+      "description": "Sitio web y sistema para la academia de fileteo porteño 'El club del Filete'. Facilita la información sobre la academía, sus integrantes y su profesor principal.",
+      "slug": "el-club-del-filete",
+      "media": [
+        { "type": "image", "src": "filete01.webp" },
+        { "type": "image", "src": "filete02.webp" },
+        { "type": "image", "src": "filete03.webp" },
+        { "type": "image", "src": "filete04.webp" }
+      ],
+      "stack": [
+        "React",
+        "Node.js",
+        "Javascript",
+
+        "Tailwind CSS",
+        "GSAP",
+
+        "Cloudflare"
+      ],
+      "link": "https://elclubdelfilete.com.ar/",
+      "repo": "https://github.com/PedroR01/ElClubDelFilete"
     },
     {
       "id": 3,
-      "title": "El club del Filete",
+      "title": "Artimañas",
       "category": "software",
-      "description": "Experiencia digital para marca gastronómica: reservas, storytelling visual y optimización para dispositivos móviles.",
-      "image": "/img/software-window.svg",
-      "stack": ["Next.js", "GSAP", "Tailwind CSS"],
-      "link": "https://example.com",
-      "repo": "https://github.com"
+      "description": "Implementación Front-end web responsive para la exposición de Tesinas de grado en el festival “Artimañas 2024” de la Universidad Nacional de La Plata.",
+      "slug": "artimanias",
+      "media": [
+        { "type": "image", "src": "artimanias01.webp" },
+        { "type": "image", "src": "artimanias02.webp" }
+      ],
+      "stack": ["React", "Node.js", "Javascript", "Tailwind CSS", "Motion"],
+      "link": "https://taller5.ludic.cc/artimanias/2024/",
+      "repo": "https://github.com/PedroR01/Artimanias2024"
     },
     {
       "id": 4,
-      "title": "Lunthiel, a bounty tale",
-      "category": "game",
-      "description": "Videojuego con narrativa, combate y progresión; desarrollo con énfasis en sensación de juego, feedback al jugador y rendimiento estable.",
-      "image": "/img/game-card.svg",
-      "stack": ["Unity", "C#", "FMOD"],
-      "link": "https://example.com",
-      "repo": "https://github.com"
+      "title": "M1-CH1",
+      "category": "software",
+      "description": "Tesina de grado sobre el estado y avance de la IA en 2024, con sustento práctico y reflexivo en mi propio robot automata 'M1-CH1'.",
+      "slug": "m1-ch1",
+      "media": [
+        { "type": "video", "src": "m1ch101.mp4", "poster": "m1ch103.webp" },
+        { "type": "video", "src": "m1ch102.mp4", "poster": "m1ch103.webp" },
+        { "type": "image", "src": "m1ch103.webp" }
+      ],
+      "stack": ["Arduino", "C++", "Fusion 360"],
+      "repo": "https://github.com/PedroR01/M1-CH1"
     },
     {
       "id": 5,
-      "title": "TOC",
+      "title": "Lunthiel, a bounty tale",
       "category": "game",
-      "description": "Proyecto interactivo experimental: mecánicas iteradas con playtesting y pulido de game feel.",
-      "image": "/img/game-card.svg",
-      "stack": ["Godot", "GDScript"],
-      "link": "https://example.com",
-      "repo": "https://github.com"
-    },
-    {
-      "id": 6,
-      "title": "Bikerz",
-      "category": "software",
-      "description": "Producto digital con mapas, perfiles y comunidad; arquitectura preparada para crecer en features sin sacrificar claridad.",
-      "image": "/img/software-window.svg",
-      "stack": ["React Native", "TypeScript", "Firebase"],
-      "link": "https://example.com",
-      "repo": "https://github.com"
-    },
-    {
-      "id": 7,
-      "title": "Rhythmfy",
-      "category": "software",
-      "description": "App musical con sincronización, playlists y UI fluida; integración con APIs de audio y estados de carga optimizados.",
-      "image": "/img/software-window.svg",
-      "stack": ["Next.js", "Web Audio API", "Stripe"],
-      "link": "https://example.com",
-      "repo": "https://github.com"
+      "description": "Mi primer videojuego 3D e incursión en la programación. Combate y movimiento en tercera persona, con fisicas básicas, enemigos con detección de rango y 3 niveles básicos.",
+      "slug": "lunthiel-a-bounty-tale",
+      "media": [
+        { "type": "image", "src": "lunthiel01.webp" },
+        { "type": "image", "src": "lunthiel02.webp" },
+        { "type": "image", "src": "lunthiel03.webp" },
+        { "type": "image", "src": "lunthiel04.webp" }
+      ],
+      "stack": ["Unity 3D", "C#", "Blender"],
+      "repo": "https://github.com/PedroR01/L-NTHIEL-a-bounty-tale"
     }
   ]
 }

@@ -80,6 +80,7 @@ export default function ContactSection() {
           <button
             type="submit"
             className="w-full px-6 py-3 rounded-lg bg-accent-btn font-archivo font-normal border-accent-foreground border-2 shadow-[0_5px_50px_-2px_rgba(11,210,150,0.2)] transition-all duration-200 transform active:scale-75 hover:bg-accent-btn-hover active:bg-accent-btn-active cursor-pointer"
+            disabled={loading}
           >
             {loading ? "Enviando..." : "Enviar mensaje"}
           </button>

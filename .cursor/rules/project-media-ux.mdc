@@ -1,0 +1,10 @@
+---
+description: Patrón UX y rendimiento para media en carruseles
+alwaysApply: true
+---
+
+- Todo carrusel multimedia debe tener `aspect-video`.
+- Implementar skeleton por slide hasta `onLoad`/`onLoadedData`.
+- Videos: `autoPlay muted loop playsInline` sin controles.
+- `poster` recomendado en slides de video.
+- Evitar montar todos los slides simultáneamente cuando haya más de 2.

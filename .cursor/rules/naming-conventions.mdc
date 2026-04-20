@@ -1,0 +1,11 @@
+---
+description: Convenciones de nombres para código limpio
+alwaysApply: true
+---
+
+- Usar nombres semánticos y explícitos en pos de un código legible y limpio.
+- Evitar abreviaturas ambiguas (`go`, `fn`, `tmp`, `data`).
+- Funciones: verbo + contexto (`moveSlideTo`, `resolveProjectMedia`).
+- Booleans: prefijos `is/has/can` (`hasMultipleSlides`).
+- Prohibido dejar bloques de código comentado muerto.
+- Respetar los comentarios incluídos en el código. En todo caso informar sobre algún comentario obsoleto o a tener en cuenta.
