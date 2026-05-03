@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import { ArrowUpRightIcon } from "lucide-react";
+import { ArrowUpRightIcon, DownloadIcon } from "lucide-react";
 import Waves from "@/components/effects/Waves";
 import CursorSpotlight from "../effects/Cursor-Spotlight";
 
@@ -155,13 +155,23 @@ export default function HeroSection() {
             realmente impactan.
           </p>
 
-          <a
-            ref={ctaRef}
-            href="#contact"
-            className="hero-cta inline-block px-6 py-3 transition-all duration-200 transform active:scale-75 rounded-lg bg-accent-btn hover:bg-accent-btn-hover active:bg-accent-btn-active relative overflow-hidden font-archivo font-normal border-accent-foreground border-2 shadow-[0_5px_50px_-2px_rgba(11,210,150,0.2)]"
-          >
-            Conversemos
-          </a>
+          <div className="flex gap-8">
+            <a
+              ref={ctaRef}
+              href="#contact"
+              className="hero-cta inline-block px-6 py-3 transition-all duration-200 transform active:scale-75 rounded-lg bg-accent-btn hover:bg-accent-btn-hover active:bg-accent-btn-active relative overflow-hidden font-archivo font-normal border-accent-foreground border-2 shadow-[0_5px_50px_-2px_rgba(11,210,150,0.2)] "
+            >
+              Conversemos
+            </a>
+            <a
+              ref={ctaRef}
+              href="https://drive.google.com/uc?export=download&id=1-Ws7Gf2SF0etYzZuAw4LKRWk2ol4gHZL"
+              download
+              className="hero-cta px-6 py-3 transition-all duration-200 transform active:scale-75 rounded-lg  hover:border-accent-btn-hover hover:text-accent-btn-hover active:bg-accent-btn-active relative overflow-hidden font-archivo font-normal border-accent-foreground border-2 shadow-[0_5px_50px_-2px_rgba(11,210,150,0.2)] flex items-center gap-4"
+            >
+              <DownloadIcon className="inline-block " /> CV
+            </a>
+          </div>
         </div>
 
         <div className="flex flex-col items-center justify-center md:justify-end">
