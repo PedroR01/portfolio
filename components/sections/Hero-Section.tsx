@@ -32,41 +32,39 @@ export default function HeroSection() {
       .to(".hero-wrapper", { opacity: 0.6 }, 0);
   }, []);
 
-  // Mouse parallax efect
   useEffect(() => {
-    const move = (e: MouseEvent) => {
-      const x = (e.clientX / window.innerWidth - 0.5) * 8;
-      const y = (e.clientY / window.innerHeight - 0.5) * 8;
+    const heroTilt = document.querySelector(".hero-tilt") as HTMLElement | null;
+    const xTo = gsap.quickTo(".hero-content", "x", {
+      duration: 0.3,
+      ease: "power3.out",
+    });
+    const yTo = gsap.quickTo(".hero-content", "y", {
+      duration: 0.3,
+      ease: "power3.out",
+    });
 
-      gsap.to(".hero-content", {
-        x,
-        y,
-        duration: 0.6,
-        ease: "power3.out",
+    let raf = 0;
+    const onMove = (e: MouseEvent) => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const x = (e.clientX / window.innerWidth - 0.5) * 8;
+        const y = (e.clientY / window.innerHeight - 0.5) * 8;
+        xTo(x);
+        yTo(y);
+
+        if (heroTilt) {
+          const rx = (window.innerWidth / 2 - e.clientX) / 40;
+          const ry = (window.innerHeight / 2 - e.clientY) / 40;
+          heroTilt.style.transform = `rotateY(${rx}deg) rotateX(${ry}deg)`;
+        }
       });
     };
 
-    window.addEventListener("mousemove", move);
-    return () => window.removeEventListener("mousemove", move);
-  }, []);
-
-  // Mouse tilt efecto en imagen
-  useEffect(() => {
-    const hero = document.querySelector(".hero-tilt");
-
-    const move = (e: MouseEvent) => {
-      const x = (window.innerWidth / 2 - e.clientX) / 40;
-      const y = (window.innerHeight / 2 - e.clientY) / 40;
-
-      hero?.setAttribute(
-        "style",
-        `transform: rotateY(${x}deg) rotateX(${y}deg)`,
-      );
+    window.addEventListener("mousemove", onMove, { passive: true });
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("mousemove", onMove);
     };
-
-    window.addEventListener("mousemove", move);
-
-    return () => window.removeEventListener("mousemove", move);
   }, []);
 
   // Animaciones titulo de entrada
@@ -130,7 +128,7 @@ export default function HeroSection() {
         waveAmpY={40}
         friction={0.62}
         tension={0.025}
-        maxCursorMove={100}
+        maxCursorMove={80}
         xGap={10}
         yGap={30}
       />

@@ -439,11 +439,18 @@ const Waves: React.FC<WavesProps> = ({
       g.addColorStop(0, lineColor);
       g.addColorStop(1, "rgba(0, 0, 0, 0)");
       ctx.strokeStyle = g;
-      ctx.lineWidth = 1.25;
-      ctx.globalAlpha = 0.58;
       ctx.stroke();
-      ctx.globalAlpha = 1;
     }
+
+    // Intersection Observer to stop the animation rendering when the container is not visible.
+    let isActive = true;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        isActive = entry.isIntersecting;
+      },
+      { threshold: 0.05 },
+    );
+    io.observe(container); // O containerRef.current
 
     /**
      * Tick Method: The main animation loop.
@@ -451,6 +458,10 @@ const Waves: React.FC<WavesProps> = ({
      */
     function tick(t: number) {
       if (!container) return;
+      if (!isActive || document.hidden) {
+        frameIdRef.current = requestAnimationFrame(tick);
+        return;
+      }
       const mouse = mouseRef.current;
       mouse.smoothX += (mouse.x - mouse.smoothX) * 0.1;
       mouse.smoothY += (mouse.y - mouse.smoothY) * 0.1;
@@ -502,7 +513,7 @@ const Waves: React.FC<WavesProps> = ({
     frameIdRef.current = requestAnimationFrame(tick);
     window.addEventListener("resize", onResize);
     window.addEventListener("mousemove", onMouseMove);
-    window.addEventListener("touchmove", onTouchMove, { passive: false });
+    window.addEventListener("touchmove", onTouchMove, { passive: true });
 
     return () => {
       window.removeEventListener("resize", onResize);
@@ -511,6 +522,7 @@ const Waves: React.FC<WavesProps> = ({
       if (frameIdRef.current !== null) {
         cancelAnimationFrame(frameIdRef.current);
       }
+      io.disconnect();
     };
   }, []);
 

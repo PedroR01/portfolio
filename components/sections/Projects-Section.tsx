@@ -129,17 +129,17 @@ export default function ProjectsSection() {
     >
       <div className="absolute inset-0 z-0 opacity-[0.35] pointer-events-none">
         <Waves
-          lineColor="#38a386"
+          lineColor="#2b8a6e"
           backgroundColor="transparent"
-          waveSpeedX={0.01}
-          waveSpeedY={0.025}
+          waveSpeedX={0.02}
+          waveSpeedY={0.04}
           waveAmpX={24}
           waveAmpY={12}
-          friction={0.62}
-          tension={0.025}
+          friction={0.7}
+          tension={0.02}
           maxCursorMove={80}
-          xGap={10}
-          yGap={28}
+          xGap={16}
+          yGap={44}
         />
       </div>
 
