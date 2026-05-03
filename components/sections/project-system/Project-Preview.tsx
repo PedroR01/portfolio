@@ -118,7 +118,11 @@ export default function ProjectPreview({
         });
       } else {
         video.pause();
-        video.currentTime = 0;
+        try {
+          video.currentTime = 0;
+        } catch {
+          /* sin metadata aún: seek inválido */
+        }
       }
     });
   }, [safeIndex, slides]);
@@ -199,14 +203,13 @@ export default function ProjectPreview({
                         playsInline
                         disablePictureInPicture
                         disableRemotePlayback
-                        preload={i === safeIndex ? "auto" : "none"}
+                        preload={i === safeIndex ? "auto" : "metadata"}
                         poster={slide.poster}
                         onLoadedMetadata={() => markLoaded(key)}
                         onLoadedData={() => markLoaded(key)}
                         onError={() => markError(key)}
-                      >
-                        <source src={slide.src} type="video/mp4" />
-                      </video>
+                        src={slide.src}
+                      ></video>
                     )
                   ) : null}
                 </div>

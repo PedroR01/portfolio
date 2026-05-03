@@ -49,7 +49,6 @@ export default function ProjectsSection() {
           if (!cards.length) return;
           gsap.from(cards, {
             y: 60,
-            opacity: 0,
             duration: 0.8,
             stagger: 0.12,
             ease: "power3.out",

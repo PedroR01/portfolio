@@ -6,7 +6,13 @@
       "category": "software",
       "description": "Simulador de emplazamiento de semaforos inteligentes IoT en un entorno urbano dinámico y responsivo. Desarrollo como sustento práctico del paper 'Sistema de Semaforización Inteligente: Arquitectura Tecnológica para la Optimización del Tránsito Urbano'.",
       "slug": "semaforos-iot",
-      "media": [{ "type": "video", "src": "semaforos01.mp4" }],
+      "media": [
+        {
+          "type": "video",
+          "src": "semaforos01.mp4",
+          "poster": "semaforos01.webp"
+        }
+      ],
       "stack": ["Unity 3D", "C#", "Blender", "HLSL Shaders", "ESP32"],
       "link": "https://github.com/PedroR01/"
     },
